@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+}
+
+input {
+  padding: 0.75rem 1.25rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 3px solid var(--clr-grey-5);
+  width: 90%;
+  max-width: 600px;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid var(--clr-grey-5);
+  padding: 0.75rem 1.25rem;
+  font-size: 1.5rem;
+  color: var(--clr-grey-5);
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+  grid-gap: 2rem;
+  margin-top: 5em;
+}

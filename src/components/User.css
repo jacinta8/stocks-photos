@@ -1,0 +1,37 @@
+article {
+  height: 17.5rem;
+
+  position: relative;
+  overflow: hidden;
+}
+article:hover .user-info {
+  transform: translateY(0%);
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  width: 100%;
+  height: 30%;
+  color: white;
+  /* display: none; */
+  transition: var(--transition);
+  transform: translateY(100%);
+}
+
+.user-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
