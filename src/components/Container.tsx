@@ -5,11 +5,12 @@ import { useRef } from "react"
 import { useGlobalContext } from "../AppContext"
 
 const Container = () => {
-  const { search, setSearch, users } = useGlobalContext()
+  const { setSearch, users, setPage } = useGlobalContext()
   const searchRef = useRef<HTMLInputElement>(null)
   const searchSubmitHandler = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     setSearch(searchRef.current?.value || "")
+    setPage(1)
   }
 
   return (

@@ -10,8 +10,8 @@ type AppContextProps = {
   isLoading: boolean
   users: User[] | []
 
-  search: string
   setSearch: (value: string) => void
+  setPage: (value: number) => void
 }
 
 type UserSet = {
@@ -21,8 +21,9 @@ type UserSet = {
 const AppContext = React.createContext<AppContextProps>({
   isLoading: false,
   users: [],
-  search: "",
+
   setSearch: () => {},
+  setPage: () => {},
 })
 
 const AppProvide = ({ children }: AppProviderProps) => {
@@ -44,7 +45,6 @@ const AppProvide = ({ children }: AppProviderProps) => {
         ? `${searchUrl}${clientID}${urlPage}${urlQuery}`
         : `${mainUrl}${clientID}${urlPage}`
 
-      console.log("url", url)
       const response = await fetch(url)
 
       if (!response.ok) throw new Error("Failed to fetch")
@@ -92,7 +92,7 @@ const AppProvide = ({ children }: AppProviderProps) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ isLoading, users, search, setSearch }}>
+    <AppContext.Provider value={{ isLoading, users, setSearch, setPage }}>
       {children}
     </AppContext.Provider>
   )
